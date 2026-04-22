@@ -353,6 +353,73 @@ const css = `
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     transition: width 0.4s ease;
   }
+
+  /* ── MOBILE ──────────────────────────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .app {
+      padding: 20px 14px 100px;
+    }
+
+    .header { margin-bottom: 24px; }
+    .header h1 { font-size: 1.6rem; }
+    .header p { font-size: 0.75rem; }
+
+    /* Pomodoro — empilha em 2 linhas */
+    .pomo-bar {
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 14px;
+    }
+    .pomo-label { width: 100%; order: 3; font-size: 0.7rem; }
+    .pomo-timer { font-size: 1.15rem; }
+    .btn-pomo { margin-left: auto; }
+
+    /* Input — botão full width abaixo */
+    .input-row { flex-direction: column; gap: 8px; }
+    .btn-add { width: 100%; padding: 13px; font-size: 0.9rem; }
+
+    /* Stats — 2 colunas */
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat { padding: 10px 10px; }
+    .stat-n { font-size: 1.2rem; }
+
+    /* Filtros — scroll horizontal */
+    .filter-row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      gap: 6px;
+      scrollbar-width: none;
+    }
+    .filter-row::-webkit-scrollbar { display: none; }
+    .filter-btn { flex-shrink: 0; }
+    .search-input { min-width: 120px; }
+    .clear-btn { flex-shrink: 0; white-space: nowrap; }
+
+    /* Task card — meta abaixo do título */
+    .task-main { flex-wrap: wrap; gap: 8px; padding: 12px 12px; }
+    .task-title { width: calc(100% - 36px); font-size: 0.9rem; }
+    .task-meta {
+      width: 100%;
+      padding-left: 32px;
+      gap: 6px;
+    }
+
+    /* AI panel */
+    .ai-panel { padding: 12px 12px; }
+    .pomo-hint { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .btn-start-pomo { width: 100%; text-align: center; padding: 8px; }
+
+    /* Botão delete — área de toque maior */
+    .btn-icon { padding: 6px; font-size: 1rem; }
+  }
+
+  @media (max-width: 380px) {
+    .header h1 { font-size: 1.35rem; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat-n { font-size: 1rem; }
+    .pomo-timer { font-size: 1rem; }
+  }
 `;
 
 // ── MAIN COMPONENT ────────────────────────────────────────────────────────────
